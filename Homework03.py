@@ -4,14 +4,15 @@
 # *Верните все возможные варианты комплектации рюкзака.
 
 BACKPACK_CAPACITY = 20
-things_dict = {'rope': 2, 'pot': 5, 'matches': 1, 'axe': 10, 'notebook': 5, 'pizza': 3}
+things_dict = {'rope': 2, 'pot': 5, 'matches': 1, 'axe': 10, 'notebook': 5, 'pizza': 1}
 
 total_weight = 0
 for item, weight in things_dict.items():
     total_weight += things_dict[item]
     if total_weight <= BACKPACK_CAPACITY:
-        print(item, weight)
+        print(f'{item:<10} {weight}')
     else:
-        break
+        total_weight -= things_dict[item]
+
 
 
